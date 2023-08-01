@@ -4,13 +4,23 @@ USED_SHELL_FILEPATH=~/.zshrc
 NODE_VERSION=18
 GOVERSION=1.20.7
 
+if [ $(command -v dnf | wc -l) = 1 ]; then
+  echo "Installing deps on Fedora"
+  sudo dnf install gcc-c++ -y &> /dev/null
+fi
+
+if [ $(command -v apt | wc -l) = 1 ]; then
+  echo "Installing deps on Ubuntu"
+  sudo apt install g++ -y &> /dev/null
+fi
+
 # Fonts
 if [ $(ls /usr/share/fonts | grep -e "FiraCodeNerdFont" | wc -l) = 0 ]; then
   echo "Installing FiraCode font"
   wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/FiraCode.zip
   unzip FiraCode.zip
   sudo mv *.ttf /usr/share/fonts/
-  sudo rm LICENSE.md
+  sudo rm LICENSE
   sudo rm readme.md
   sudo rm FiraCode.zip
 fi
