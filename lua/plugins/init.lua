@@ -9,6 +9,7 @@ require("plugins.autotag")
 require("plugins.completion")
 require("plugins.mason")
 require("plugins.lsp")
+require("plugins.nvimcomment")
 
 return require("packer").startup(function (use)
   -- Packer can manage itself
@@ -59,6 +60,9 @@ return require("packer").startup(function (use)
   use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
   use "neovim/nvim-lspconfig"
+
+  -- Auto Comment
+  use "terrortylor/nvim-comment"
 
   -- Completion
   use 'hrsh7th/cmp-nvim-lsp'
