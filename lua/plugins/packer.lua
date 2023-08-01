@@ -7,6 +7,10 @@ return require("packer").startup(function (use)
     'nvim-lualine/lualine.nvim',
   }
 
+  use {
+    "ellisonleao/gruvbox.nvim"
+  }
+
   -- Git
   use "tpope/vim-fugitive"
   use "tanvirtin/vgit.nvim"
@@ -20,6 +24,10 @@ return require("packer").startup(function (use)
     requires = {
       "nvim-tree/nvim-web-devicons",
     }
+  }
+
+  use {
+    "NvChad/nvterm",
   }
 
   -- Telescope
