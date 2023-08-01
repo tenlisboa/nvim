@@ -1,4 +1,8 @@
-#!/bin/bash
+#!/bin/zsh
+
+USED_SHELL_FILEPATH=~/.zshrc
+NODE_VERSION=18
+GOVERSION=1.20.7
 
 # Fonts
 if [ $(ls /usr/share/fonts | grep -e "FiraCodeNerdFont" | wc -l) = 0 ]; then
@@ -23,16 +27,23 @@ fi
 USER_LOCAL=/usr/local
 if [ ! -d $USER_LOCAL/go ]; then
   echo "Installing Go"
-  GOVERSION="1.20.7"
   wget https://go.dev/dl/go$GOVERSION.linux-amd64.tar.gz
   sudo rm -rf $USER_LOCAL/go && sudo tar -C $USER_LOCAL -xzf go$GOVERSION.linux-amd64.tar.gz
 
-  if [ $(cat ~/.zshrc | grep -e "/usr/local/go/bin" | wc -l) = 0 ]; then
-    echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.zshrc
+  if [ $(cat $USED_SHELL_FILEPATH | grep -e "/usr/local/go/bin" | wc -l) = 0 ]; then
+    echo "export PATH=$PATH:/usr/local/go/bin" >> $USED_SHELL_FILEPATH
   fi
 fi
 
-#curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-#source ~/.bashrc
-#nvm install 18
-#npm install -g typescript typescript-language-server neovim
+if [ $(command -v nvm | wc -l) = 0 ]; then
+  echo "Installing nvm"
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash > /dev/null
+  source $USED_SHELL_FILEPATH
+fi
+
+# Node
+if [ $(command -v node | wc -l) = 0 ]; then
+  echo "Installing node"
+  nvm install $NODE_VERSION
+  npm install -g typescript typescript-language-server neovim
+fi
