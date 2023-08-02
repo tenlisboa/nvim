@@ -4,15 +4,41 @@ USED_SHELL_FILEPATH=~/.zshrc
 NODE_VERSION=18
 GOVERSION=1.20.7
 
-if [ $(command -v dnf | wc -l) = 1 ]; then
-  echo "Installing deps on Fedora"
-  sudo dnf install gcc-c++ ripgrep -y &> /dev/null
-fi
+get_os_packager() {
+  if [ $(command -v dnf | wc -l) = 1 ]; then
+    return dnf
+  fi
 
-if [ $(command -v apt | wc -l) = 1 ]; then
-  echo "Installing deps on Ubuntu"
-  sudo apt install g++ ripgrep -y &> /dev/null
-fi
+  if [ $(command -v apt | wc -l) = 1 ]; then
+    return apt
+  fi
+}
+
+get_packages() {
+  APT_PACKAGES = g++ ripgrep
+  DNF_PACKAGES = gcc-c++ ripgrep
+  if [ $(command -v dnf | wc -l) = 1 ]; then
+    return $DNF_PACKAGES
+  fi
+
+  if [ $(command -v apt | wc -l) = 1 ]; then
+    return $APT_PACKAGES
+  fi
+}
+
+OS_PACKAGER = get_os_packager()
+PACKAGES = get_packages()
+$($OS_PACKAGER install -y $PACKAGES)
+
+# if [ $(command -v dnf | wc -l) = 1 ]; then
+#   echo "Installing deps on Fedora"
+#   sudo dnf install gcc-c++ ripgrep -y &> /dev/null
+# fi
+
+# if [ $(command -v apt | wc -l) = 1 ]; then
+#   echo "Installing deps on Ubuntu"
+#   sudo apt install g++ ripgrep -y &> /dev/null
+# fi
 
 # Fonts
 if [ $(ls /usr/share/fonts | grep -e "FiraCodeNerdFont" | wc -l) = 0 ]; then
@@ -56,4 +82,20 @@ if [ $(command -v node | wc -l) = 0 ]; then
   echo "Installing node"
   nvm install $NODE_VERSION
   npm install -g typescript typescript-language-server neovim
+fi
+
+#PHP
+if [ $(command -v php | wc -l) = 0 ]; then
+  echo "Installing PHP"
+  $($OS_PACKAGER install -y php &> /dev/null)
+fi
+
+if [ $(command -v composer | wc -l) = 0 ]; then
+  echo "Installing composer"
+  php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+  php -r "if (hash_file('sha384', 'composer-setup.php') === 'e21205b207c3ff031906575712edab6f13eb0b361f2085f1f1237b7126d785e826a450292b6cfd1d64d92e6563bbde02') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+  php composer-setup.php
+  php -r "unlink('composer-setup.php');"
+
+  sudo mv composer.phar /usr/local/bin/composer
 fi
