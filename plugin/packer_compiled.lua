@@ -99,6 +99,16 @@ _G.packer_plugins = {
     path = "/home/lisboa/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
     url = "https://github.com/hrsh7th/cmp-vsnip"
   },
+  ["copilot.vim"] = {
+    loaded = true,
+    path = "/home/lisboa/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    url = "https://github.com/github/copilot.vim"
+  },
+  ["gruvbox.nvim"] = {
+    loaded = true,
+    path = "/home/lisboa/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/lisboa/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -153,6 +163,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/lisboa/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
+  },
+  nvterm = {
+    loaded = true,
+    path = "/home/lisboa/.local/share/nvim/site/pack/packer/start/nvterm",
+    url = "https://github.com/NvChad/nvterm"
   },
   ["packer.nvim"] = {
     loaded = true,
