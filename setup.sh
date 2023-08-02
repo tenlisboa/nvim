@@ -6,12 +6,12 @@ GOVERSION=1.20.7
 
 if [ $(command -v dnf | wc -l) = 1 ]; then
   echo "Installing deps on Fedora"
-  sudo dnf install gcc-c++ -y &> /dev/null
+  sudo dnf install gcc-c++ ripgrep -y &> /dev/null
 fi
 
 if [ $(command -v apt | wc -l) = 1 ]; then
   echo "Installing deps on Ubuntu"
-  sudo apt install g++ -y &> /dev/null
+  sudo apt install g++ ripgrep -y &> /dev/null
 fi
 
 # Fonts
