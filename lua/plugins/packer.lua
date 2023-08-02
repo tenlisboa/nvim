@@ -2,6 +2,8 @@ return require("packer").startup(function (use)
   -- Packer can manage itself
   use "wbthomason/packer.nvim"
 
+  use "github/copilot.vim"
+
   -- Status line
   use {
     'nvim-lualine/lualine.nvim',

@@ -50,6 +50,7 @@ map_key("n", "<C-l>", "<C-W>l")
 -- Movement between buffers
 map_key("n", "<leader>j", ":bp<CR>")
 map_key("n", "<leader>l", ":bn<CR>")
+map_key("n", "<leader>x", ":bdelete<CR>")
 
 -- GoTO
 vim.api.nvim_create_autocmd('LspAttach', {
