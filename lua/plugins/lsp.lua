@@ -12,6 +12,7 @@ lspconfig.prismals.setup{}
 lspconfig.tailwindcss.setup{}
 lspconfig.gopls.setup {}
 lspconfig.phpactor.setup {}
+lspconfig.vuels.setup {}
 
 -- GoTO
 vim.api.nvim_create_autocmd('LspAttach', {

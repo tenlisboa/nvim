@@ -22,7 +22,8 @@ require("mason-lspconfig").setup({
     "prismals",
     "tailwindcss",
     "gopls",
-    "phpactor"
+    "phpactor",
+    "vuels"
   },
 
   automatic_installation = true
