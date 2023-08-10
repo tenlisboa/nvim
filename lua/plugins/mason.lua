@@ -24,7 +24,6 @@ require("mason-lspconfig").setup({
     "gopls",
     "intelephense",
     "vuels",
-    "php-cs-fixer"
   },
 
   automatic_installation = true
