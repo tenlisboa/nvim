@@ -30,15 +30,15 @@ OS_PACKAGER = get_os_packager()
 PACKAGES = get_packages()
 $($OS_PACKAGER install -y $PACKAGES)
 
-# if [ $(command -v dnf | wc -l) = 1 ]; then
-#   echo "Installing deps on Fedora"
-#   sudo dnf install gcc-c++ ripgrep -y &> /dev/null
-# fi
+if [ $(command -v dnf | wc -l) = 1 ]; then
+  echo "Installing deps on Fedora"
+  sudo dnf install gcc-c++ ripgrep -y &> /dev/null
+fi
 
-# if [ $(command -v apt | wc -l) = 1 ]; then
-#   echo "Installing deps on Ubuntu"
-#   sudo apt install g++ ripgrep -y &> /dev/null
-# fi
+if [ $(command -v apt | wc -l) = 1 ]; then
+  echo "Installing deps on Ubuntu"
+  sudo apt install g++ ripgrep -y &> /dev/null
+fi
 
 # Fonts
 if [ $(ls /usr/share/fonts | grep -e "FiraCodeNerdFont" | wc -l) = 0 ]; then

@@ -11,7 +11,7 @@ lspconfig.lua_ls.setup{}
 lspconfig.prismals.setup{}
 lspconfig.tailwindcss.setup{}
 lspconfig.gopls.setup {}
-lspconfig.phpactor.setup {}
+lspconfig.intelephense.setup {}
 lspconfig.vuels.setup {}
 
 -- GoTO
