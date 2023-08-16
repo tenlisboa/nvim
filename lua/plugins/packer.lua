@@ -2,17 +2,12 @@ return require("packer").startup(function (use)
   -- Packer can manage itself
   use "wbthomason/packer.nvim"
 
-  -- Copilot
-  use { "zbirenbaum/copilot.lua" }
-
   -- Status line
   use {
     'nvim-lualine/lualine.nvim',
   }
 
-  use {
-    "ellisonleao/gruvbox.nvim"
-  }
+  use 'projekt0n/github-nvim-theme'
 
   -- Git
   use "tpope/vim-fugitive"

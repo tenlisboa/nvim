@@ -1,6 +1,6 @@
 local packer = require("plugins.packer")
 
-require("plugins.gruvbox")
+require("plugins.colorscheme")
 require("plugins.lualine")
 require("plugins.fugitive")
 require("plugins.vgit")
@@ -14,6 +14,5 @@ require("plugins.nvimcomment")
 require("plugins.nvterm")
 require("plugins.treesitter")
 require("plugins.tree")
-require("plugins.copilot")
 
 return packer
