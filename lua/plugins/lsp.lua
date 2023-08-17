@@ -10,9 +10,9 @@ lspconfig.tsserver.setup{}
 lspconfig.lua_ls.setup{}
 lspconfig.prismals.setup{}
 lspconfig.tailwindcss.setup{}
-lspconfig.gopls.setup {}
 lspconfig.intelephense.setup {}
 lspconfig.vuels.setup {}
+lspconfig.pyright.setup {}
 
 -- GoTO
 vim.api.nvim_create_autocmd('LspAttach', {

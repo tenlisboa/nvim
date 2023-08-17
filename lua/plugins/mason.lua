@@ -21,9 +21,9 @@ require("mason-lspconfig").setup({
     "marksman",
     "prismals",
     "tailwindcss",
-    "gopls",
     "intelephense",
     "vuels",
+    "pyright"
   },
 
   automatic_installation = true
