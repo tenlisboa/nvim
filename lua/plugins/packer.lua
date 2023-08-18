@@ -7,6 +7,9 @@ return require("packer").startup(function (use)
     'nvim-lualine/lualine.nvim',
   }
 
+  -- Wakatime
+  use 'wakatime/vim-wakatime'
+
   use 'projekt0n/github-nvim-theme'
 
   -- Git
