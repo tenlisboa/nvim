@@ -14,5 +14,7 @@ require("plugins.nvimcomment")
 require("plugins.nvterm")
 require("plugins.treesitter")
 require("plugins.tree")
+require("plugins.python")
+require("plugins.closetag")
 
 return packer

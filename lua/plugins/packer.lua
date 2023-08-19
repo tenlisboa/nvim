@@ -12,6 +12,13 @@ return require("packer").startup(function (use)
 
   use 'projekt0n/github-nvim-theme'
 
+  -- Python
+  use 'davidhalter/jedi-vim'
+  use 'tmhedberg/SimpylFold'
+  use 'vim-scripts/indentpython.vim'
+
+  use 'alvan/vim-closetag'
+
   -- Git
   use "tpope/vim-fugitive"
   use "tanvirtin/vgit.nvim"
