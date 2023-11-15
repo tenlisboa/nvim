@@ -48,8 +48,8 @@ map_key("n", "<C-k>", "<C-W>k")
 map_key("n", "<C-l>", "<C-W>l")
 
 -- Movement between buffers
-map_key("n", "<leader>j", ":bp<CR>")
-map_key("n", "<leader>k", ":bn<CR>")
+map_key("n", "<leader>bp", ":bp<CR>")
+map_key("n", "<leader>bn", ":bn<CR>")
 map_key("n", "<leader>x", ":bdelete | :bp<CR>")
 
 map_key("t", "<C-x>", vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true))
