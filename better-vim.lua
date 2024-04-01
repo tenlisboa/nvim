@@ -11,14 +11,17 @@ return {
       "",
     }
   },
+  hooks = {
+    after_setup = function()
+      vim.opt.foldmethod = "expr"
+      vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+    end,
+  },
   plugins = {
     "arzg/vim-colors-xcode",
     "nvim-lua/plenary.nvim", {
     "Civitasv/cmake-tools.nvim",
     dependencies = "nvim-lua/plenary.nvim",
-    config = function()
-      require("cmake-tools").setup {}
-    end,
   },
   },
   theme = {
@@ -36,7 +39,24 @@ return {
     }
   },
   lsps = {
-    clangd = {},
+    clangd = {
+      settings = {
+        cmd = {
+          "clangd",
+          "--background-index",
+          "--clang-tidy",
+          "--header-insertion=iwyu",
+          "--completion-style=detailed",
+          "--function-arg-placeholders"
+        },
+        init_options = {
+          usePlaceholders = true,
+          completeUnimported = true,
+          clangdFileStatus = true,
+          semanticHighlighting = true
+        },
+      }
+    },
     cmake = {},
     gopls = {}
   },
