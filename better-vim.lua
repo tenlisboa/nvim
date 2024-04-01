@@ -11,9 +11,18 @@ return {
       "",
     }
   },
+  plugins = {
+    "arzg/vim-colors-xcode",
+    "nvim-lua/plenary.nvim", {
+    "Civitasv/cmake-tools.nvim",
+    dependencies = "nvim-lua/plenary.nvim",
+    config = function()
+      require("cmake-tools").setup {}
+    end,
+  },
+  },
   theme = {
-    name = "catppuccin",
-    catppuccin_flavour = "frappe"
+    name = "xcodedark",
   },
   flags = {
     format_on_save = true
@@ -27,13 +36,8 @@ return {
     }
   },
   lsps = {
-    clangd = {
-      settings = {
-        cmd = { "clangd -I/usr/local" }
-      }
-    },
-    gopls = {
-
-    }
+    clangd = {},
+    cmake = {},
+    gopls = {}
   },
 }
