@@ -13,16 +13,28 @@ return {
   },
   hooks = {
     after_setup = function()
-      vim.opt.foldmethod = "expr"
-      vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-    end,
+      vim.opt.foldmethod = 'expr'
+      vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+      vim.opt.foldcolumn = '1'   -- '0' is not bad
+      vim.opt.foldlevel = 99     -- Using ufo provider need a large value, feel free to decrease the value
+      vim.opt.foldlevelstart = 1
+      vim.opt.foldenable = false -- if this option is true and fold method option is other than normal, every time a document is opened everything will be folded.
+    end
+  },
+  noice = {
+    messages = {
+      view = "mini",         -- default view for messages
+      view_error = "notify", -- view for errors
+      view_warn = "notify",  -- view for warnings
+    },
   },
   plugins = {
     "arzg/vim-colors-xcode",
-    "nvim-lua/plenary.nvim", {
-    "Civitasv/cmake-tools.nvim",
-    dependencies = "nvim-lua/plenary.nvim",
-  },
+    "nvim-lua/plenary.nvim",
+    {
+      "Civitasv/cmake-tools.nvim",
+      dependencies = "nvim-lua/plenary.nvim",
+    },
   },
   theme = {
     name = "xcodedark",
