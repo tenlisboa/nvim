@@ -34,6 +34,7 @@ return {
   plugins = {
     "arzg/vim-colors-xcode",
     "nvim-lua/plenary.nvim",
+    "wakatime/vim-wakatime",
     {
       "Civitasv/cmake-tools.nvim",
       dependencies = "nvim-lua/plenary.nvim",
@@ -58,13 +59,14 @@ return {
         ["<M-j>"] = { "mz:m+<cr>`z", "Move lines down" },
         ["<M-k>"] = { "mz:m-2<cr>`z", "Move lines up" },
         ["<leader>gs"] = { ":Git<cr>", "Show Git changes" },
-        ["<leader>gf"] = { ":Gvdiffsplit<cr>", "Show Git diff"},
+        ["<leader>gf"] = { ":Gvdiffsplit<cr>", "Show Git diff" },
       },
       v = {
         ["<tab>"] = { ">gv", "Move a group of lines right" },
         ["<S-tab>"] = { "<gv", "Move a group of lines left" },
         ["<M-j>"] = { ":m'>+<cr>`<my`>mzgv`yo`z", "Move lines down" },
-        ["<M-k>"] = { ":m'<-2<cr>`>my`<mzgv`yo`z", "Move lines up" },     }
+        ["<M-k>"] = { ":m'<-2<cr>`>my`<mzgv`yo`z", "Move lines up" },
+      }
     }
   },
   lsps = {
@@ -89,17 +91,17 @@ return {
     cmake = {},
     gopls = {},
     jsonls = {
-      filetypes = {"json", "jsonc"},
+      filetypes = { "json", "jsonc" },
       settings = {
         json = {
           -- Schemas https://www.schemastore.org
           schemas = {
             {
-              fileMatch = {"package.json"},
+              fileMatch = { "package.json" },
               url = "https://json.schemastore.org/package.json"
             },
             {
-              fileMatch = {"tsconfig*.json"},
+              fileMatch = { "tsconfig*.json" },
               url = "https://json.schemastore.org/tsconfig.json"
             },
             {
@@ -111,19 +113,19 @@ return {
               url = "https://json.schemastore.org/prettierrc.json"
             },
             {
-              fileMatch = {".eslintrc", ".eslintrc.json"},
+              fileMatch = { ".eslintrc", ".eslintrc.json" },
               url = "https://json.schemastore.org/eslintrc.json"
             },
             {
-              fileMatch = {".babelrc", ".babelrc.json", "babel.config.json"},
+              fileMatch = { ".babelrc", ".babelrc.json", "babel.config.json" },
               url = "https://json.schemastore.org/babelrc.json"
             },
             {
-              fileMatch = {"lerna.json"},
+              fileMatch = { "lerna.json" },
               url = "https://json.schemastore.org/lerna.json"
             },
             {
-              fileMatch = {"now.json", "vercel.json"},
+              fileMatch = { "now.json", "vercel.json" },
               url = "https://json.schemastore.org/now.json"
             },
             {
