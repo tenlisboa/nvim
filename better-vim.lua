@@ -19,6 +19,10 @@ return {
       vim.opt.foldlevel = 99     -- Using ufo provider need a large value, feel free to decrease the value
       vim.opt.foldlevelstart = 1
       vim.opt.foldenable = false -- if this option is true and fold method option is other than normal, every time a document is opened everything will be folded.
+
+
+      vim.keymap.set('n', ';;', 'gcc', { remap = true })
+      vim.keymap.set('v', ';;', 'gc', { remap = true })
     end
   },
   noice = {
