@@ -73,6 +73,9 @@ return {
       }
     }
   },
+  formatters = {
+    eslint_d = {}
+  },
   lsps = {
     clangd = {
       settings = {
@@ -143,6 +146,7 @@ return {
           }
         }
       },
-    }
+    },
+    elixirls = {},
   },
 }
