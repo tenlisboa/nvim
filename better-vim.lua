@@ -23,6 +23,7 @@ return {
 
       vim.keymap.set('n', ';;', 'gcc', { remap = true })
       vim.keymap.set('v', ';;', 'gc', { remap = true })
+      vim.keymap.set('t', '<Esc>', "<C-\\><C-n>", { noremap = true })
     end
   },
   noice = {
