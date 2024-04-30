@@ -65,6 +65,9 @@ return {
         ["<M-k>"] = { "mz:m-2<cr>`z", "Move lines up" },
         ["<leader>gs"] = { ":Git<cr>", "Show Git changes" },
         ["<leader>gf"] = { ":Gvdiffsplit<cr>", "Show Git diff" },
+        ["<leader>glol"] = { ":Git log<cr>", "Show Git logs" },
+        ["<leader>gc"] = { ":Git commit<cr>", "Git commit" },
+        ["<leader>gca"] = { ":Git commit --amend<cr>", "Git commit amend" },
       },
       v = {
         ["<tab>"] = { ">gv", "Move a group of lines right" },
