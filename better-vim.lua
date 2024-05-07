@@ -24,6 +24,8 @@ return {
       vim.keymap.set('n', ';;', 'gcc', { remap = true })
       vim.keymap.set('v', ';;', 'gc', { remap = true })
       vim.keymap.set('t', '<Esc>', "<C-\\><C-n>", { noremap = true })
+
+      vim.o.background = 'light'
     end
   },
   noice = {
@@ -37,7 +39,11 @@ return {
     }
   },
   plugins = {
-    "arzg/vim-colors-xcode",
+    {
+      "ellisonleao/gruvbox.nvim",
+      priority = 1000,
+      config = true,
+    },
     "nvim-lua/plenary.nvim",
     "wakatime/vim-wakatime",
     {
@@ -49,7 +55,7 @@ return {
     },
   },
   theme = {
-    name = "xcodedark",
+    name = "gruvbox",
   },
   flags = {
     format_on_save = true
@@ -81,6 +87,7 @@ return {
     eslint_d = {}
   },
   lsps = {
+    cssls = {},
     clangd = {
       settings = {
         cmd = {
