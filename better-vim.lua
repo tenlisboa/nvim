@@ -25,7 +25,7 @@ return {
       vim.keymap.set('v', ';;', 'gc', { remap = true })
       vim.keymap.set('t', '<Esc>', "<C-\\><C-n>", { noremap = true })
 
-      vim.o.background = 'light'
+      vim.o.background = 'dark'
     end
   },
   noice = {
@@ -53,6 +53,9 @@ return {
     {
       "tpope/vim-fugitive",
     },
+    {
+      "Exafunction/codeium.vim"
+    }
   },
   theme = {
     name = "gruvbox",
@@ -72,14 +75,15 @@ return {
         ["<leader>gs"] = { ":Git<cr>", "Show Git changes" },
         ["<leader>gf"] = { ":Gvdiffsplit<cr>", "Show Git diff" },
         ["<leader>glol"] = { ":Git log<cr>", "Show Git logs" },
-        ["<leader>gc"] = { ":Git commit<cr>", "Git commit" },
-        ["<leader>gca"] = { ":Git commit --amend<cr>", "Git commit amend" },
+        ["<leader>gc"] = { ":Git commit --no-verify<cr>", "Git commit" },
+        ["<leader>gca"] = { ":Git commit --amend --no-verify <cr>", "Git commit amend" },
       },
       v = {
         ["<tab>"] = { ">gv", "Move a group of lines right" },
         ["<S-tab>"] = { "<gv", "Move a group of lines left" },
         ["<M-j>"] = { ":m'>+<cr>`<my`>mzgv`yo`z", "Move lines down" },
         ["<M-k>"] = { ":m'<-2<cr>`>my`<mzgv`yo`z", "Move lines up" },
+        ["<leader>ca"] = { ":lua vim.lsp.buf.code_action()<CR>", "Code action" },
       }
     }
   },
