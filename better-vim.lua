@@ -88,7 +88,7 @@ return {
     }
   },
   formatters = {
-    eslint_d = {}
+    prettierd = {}
   },
   lsps = {
     cssls = {},
