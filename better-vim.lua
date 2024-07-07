@@ -26,6 +26,9 @@ return {
       vim.keymap.set('t', '<Esc>', "<C-\\><C-n>", { noremap = true })
 
       vim.o.background = 'dark'
+
+      vim.fn.sign_define('DapBreakpoint', { text = '●', texthl = '', linehl = '', numhl = '' })
+      vim.fn.sign_define('DapStopped', { text = '▶️', texthl = '', linehl = '', numhl = '' })
     end
   },
   noice = {
@@ -55,6 +58,47 @@ return {
     },
     {
       "Exafunction/codeium.vim"
+    },
+    {
+      "mfussenegger/nvim-dap"
+    },
+    {
+      "nvim-neotest/nvim-nio"
+    },
+    {
+      "leoluz/nvim-dap-go",
+      config = function()
+        require("dap-go").setup {
+          delve = {
+            path = "dlv",
+            initialize_timeout_sec = 20,
+            port = "${port}",
+            args = {},
+            build_flags = "",
+            detached = vim.fn.has("win32") == 0,
+            cwd = nil,
+          },
+        }
+      end
+    },
+    {
+      "rcarriga/nvim-dap-ui",
+      requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+      config = function()
+        local dap, dapui = require("dap"), require("dapui")
+
+        dapui.setup()
+
+        dap.listeners.after.event_initialized["dapui_config"] = function()
+          dapui.open()
+        end
+        dap.listeners.before.event_terminated["dapui_config"] = function()
+          dapui.close()
+        end
+        dap.listeners.before.event_exited["dapui_config"] = function()
+          dapui.close()
+        end
+      end
     }
   },
   theme = {
@@ -77,6 +121,11 @@ return {
         ["<leader>glol"] = { ":Git log<cr>", "Show Git logs" },
         ["<leader>gc"] = { ":Git commit --no-verify<cr>", "Git commit" },
         ["<leader>gca"] = { ":Git commit --amend --no-verify <cr>", "Git commit amend" },
+        ["<leader>b"] = { ":lua require('dap').toggle_breakpoint()<cr>", "Toggle breakpoint" },
+        ["<F9>"] = { ":lua require('dap').continue()<cr>", "Continue" },
+        ["<F10>"] = { ":lua require('dap').step_over()<cr>", "Step over" },
+        ["<F11>"] = { ":lua require('dap').step_into()<cr>", "Step into" },
+        ["<F12>"] = { ":lua require('dap').step_out()<cr>", "Step out" },
       },
       v = {
         ["<tab>"] = { ">gv", "Move a group of lines right" },
@@ -163,5 +212,9 @@ return {
       },
     },
     elixirls = {},
+    rust_analyzer = {},
+  },
+  gitsigns = {
+    numhl = true,
   },
 }
