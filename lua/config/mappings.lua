@@ -26,11 +26,10 @@ map("n", "<leader>gco", ":Git checkout ", opts)
 map("n", "<leader>gc", ":Git commit<CR>", opts)
 
 -- DAP
-map("n", "<A-d>", ":lua require('dap').continue()<cr>", opts)
-map("n", "co", ":lua require('dap').continue()<cr>", opts)
-map("n", "so", ":lua require('dap').step_over()<cr>", opts)
-map("n", "si", ":lua require('dap').step_into()<cr>", opts)
-map("n", "sx", ":lua require('dap').terminate()<cr>", opts)
+map("n", "F9", ":lua require('dap').continue()<cr>", opts)
+map("n", "F10", ":lua require('dap').step_over()<cr>", opts)
+map("n", "F11", ":lua require('dap').step_into()<cr>", opts)
+map("n", "F12", ":lua require('dap').terminate()<cr>", opts)
 
 -- Terminal
 map("n", "<leader>th", ":split <cr> :terminal<cr>", opts)
