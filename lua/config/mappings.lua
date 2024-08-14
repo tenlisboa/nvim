@@ -1,9 +1,9 @@
 local map = vim.api.nvim_set_keymap
-local opts = {noremap = true, silent = true}
+local opts = { noremap = true, silent = true }
 
 map("n", "<leader>eb", ":e ~/.config/nvim/init.lua<CR>", opts)
 map("n", "<leader>sv", ":source ~/.config/nvim/init.lua<CR>", opts)
- 
+
 -- Move lines up/down
 map("n", "<M-j>", ":m .+1<CR>==", opts)
 map("n", "<M-k>", ":m .-2<CR>==", opts)
@@ -60,8 +60,7 @@ map("n", "<A-p>", "<Cmd>BufferPin<CR>", opts)
 -- Close buffer
 map("n", "<A-c>", "<Cmd>BufferClose<CR>", opts)
 map("n", "<A-b>", "<Cmd>BufferCloseAllButCurrent<CR>", opts)
- 
+
 -- Telescope
 
 map("n", "-", ":Telescope file_browser<CR>", opts)
-
