@@ -64,3 +64,9 @@ map("n", "<A-b>", "<Cmd>BufferCloseAllButCurrent<CR>", opts)
 -- Telescope
 
 map("n", "-", ":Telescope file_browser<CR>", opts)
+
+-- Open Diagnostics
+
+map("n", "<leader>dd", ":lua vim.diagnostic.open_float()<CR>", opts)
+map("n", "<leader>dn", ":lua vim.diagnostic.goto_next()<CR>", opts)
+map("n", "<leader>dp", ":lua vim.diagnostic.goto_prev()<CR>", opts)
