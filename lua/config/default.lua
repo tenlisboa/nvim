@@ -17,7 +17,7 @@ vim.opt.wildmenu = true
 
 vim.opt.number = true
 vim.opt.cursorline = true
-vim.opt.clipboard = "unnamedplus"
+vim.opt.clipboard = "unnamed"
 vim.opt.undofile = true
 
 vim.opt.tabstop = 2
