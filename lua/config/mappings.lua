@@ -71,3 +71,12 @@ map("n", "-", ":Telescope file_browser<CR>", opts)
 map("n", "<leader>dd", ":lua vim.diagnostic.open_float()<CR>", opts)
 map("n", "<leader>dn", ":lua vim.diagnostic.goto_next()<CR>", opts)
 map("n", "<leader>dp", ":lua vim.diagnostic.goto_prev()<CR>", opts)
+
+-- Split
+map("n", "<leader>vs", ":vsplit<cr>", opts)
+map("n", "<leader>hs", ":split<cr>", opts)
+
+map("n", "<C-h>", "<C-W>h", opts)
+map("n", "<C-j>", "<C-W>j", opts)
+map("n", "<C-k>", "<C-W>k", opts)
+map("n", "<C-l>", "<C-W>l", opts)
