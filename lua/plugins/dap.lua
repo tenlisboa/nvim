@@ -31,38 +31,23 @@ return {
           protocol = 'inspector',
           skipFiles = { "<node_internals>/**" },
         },
-        -- {
-        --   type = "pwa-node",
-        --   request = "launch",
-        --   name = "Debug NEST.js App",
-        --   cwd = "${workspaceFolder}",
-        --   sourceMaps = true,
-        --   runtimeExecutable = "nest",
-        --   runtimeArgs = function()
-        --     return { "start", vim.ui.input({ prompt = "App name: " }, function (input)
-        --       if input ~= nil then
-        --         return input
-        --       else
-        --         return ""
-        --       end
-        --     end), "-w", "-d" }
-        --   end,
-          -- websocketAddress = function()
-          --  return string.match(
-          --   vim.api.nvim_exec('!docker logs [conatiner-name]|& grep -oE "ws.*" | tail -1', true),
-          --   "ws:.*"
-          --  )
-          -- end,
-        -- },
         {
           type = 'pwa-node',
           request = 'attach',
-          name = 'Attach to debbuger',
+          name = 'Attach to debugger',
           cwd = "${workspaceFolder}",
           skipFiles = { "<node_internals>/**" },
           sourceMaps = true,
           protocol = 'inspector',
-          port = 9229,
+          port = function()
+            return vim.ui.input({ prompt = "Debugger Port: " }, function(input)
+              if input ~= nil then
+                return tonumber(input)
+              else
+                return 9229
+              end
+            end)
+          end,
           webRoot = "${workspaceFolder}",
         }
 
