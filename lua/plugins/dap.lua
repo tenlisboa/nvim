@@ -10,20 +10,6 @@ return {
         {
           type = 'pwa-node',
           request = 'launch',
-          name = 'Next.js - Run dev',
-          cwd = "${workspaceFolder}",
-          sourceMaps = true,
-          runtimeExecutable = 'npm',
-          runtimeArgs = {
-            'run',
-            'dev',
-          },
-          protocol = 'inspector',
-          skipFiles = { "<node_internals>/**" },
-        },
-        {
-          type = 'pwa-node',
-          request = 'launch',
           name = "Launch File",
           program = "${file}",
           cwd = "${workspaceFolder}",
