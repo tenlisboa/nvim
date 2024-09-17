@@ -41,7 +41,7 @@ return {
     end
 
     require("mason-nvim-dap").setup({
-      ensure_installed = { "delve", "js-debug-adapter" },
+      ensure_installed = {"js-debug-adapter", "php-debug-adapter" },
       handlers = {
         function(config)
           require("mason-nvim-dap").default_setup(config)
@@ -54,7 +54,7 @@ return {
     "jay-babu/mason-nvim-dap.nvim",
     {
       "microsoft/vscode-js-debug",
-      build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
+      build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out && git restore package-lock.json"
     },
     {
       "mxsdev/nvim-dap-vscode-js",
