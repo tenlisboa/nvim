@@ -11,11 +11,13 @@ return {
     null_ls.setup({
       sources = {
         null_ls.builtins.formatting.prettierd,
+        null_ls.builtins.diagnostics.golangci_lint,
+        null_ls.builtins.diagnostics.yamllint,
       }
     })
 
     mason_null.setup({
-      ensure_installed = { "prettierd" }
+      ensure_installed = { "prettierd", "golangci_lint", "yamllint" }
     })
   end
 }

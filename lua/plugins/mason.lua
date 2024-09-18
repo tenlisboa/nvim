@@ -1,16 +1,10 @@
 return {
   "williamboman/mason.nvim",
-  dependencies = { "williamboman/mason-lspconfig.nvim", "neovim/nvim-lspconfig", "hrsh7th/cmp-nvim-lsp" },
+  dependencies = { "williamboman/mason-lspconfig.nvim", "neovim/nvim-lspconfig" },
   config = function()
-    local lspconfig = require("lspconfig")
     require("mason").setup()
     require("mason-lspconfig").setup({
-      ensure_installed = { "lua_ls", "eslint", "jsonls", "tailwindcss", "phpactor", "ts_ls" },
-      handlers = {
-        function(server)
-          lspconfig[server].setup({})
-        end
-      }
+      ensure_installed = { "lua_ls", "gopls", "ts_ls", "eslint", "jsonls", "tailwindcss" }
     })
   end
 }
