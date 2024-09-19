@@ -71,19 +71,5 @@ return {
         })
       }
     })
-
-    local lspconfig = require("lspconfig")
-
-    -- Python: brew install pyright
-    lspconfig["pyright"].setup {}
-
-    -- Ruby: gem install solargraph
-    lspconfig["solargraph"].setup {}
-
-    -- https://phpactor.readthedocs.io/en/master/usage/standalone.html#installation
-    lspconfig["phpactor"].setup {}
-
-    -- Javascript: npm install -g vscode-langservers-extracted
-    lspconfig["ts_ls"].setup {}
   end
 }
