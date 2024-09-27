@@ -17,7 +17,7 @@ return {
     })
 
     mason_null.setup({
-      ensure_installed = { "prettierd", "golangci_lint", "yamllint" }
+      ensure_installed = { "prettierd", "golangci_lint" }
     })
   end
 }
