@@ -3,7 +3,7 @@ local map_keys = require("utils.mapper")
 map_keys({
   n = {
     ["-"] = "<cmd>Telescope file_browser<CR>",
-    ["<leader>ff"] = "<cmd>Telescope find_files<CR>",
+    ["<leader>F"] = "<cmd>Telescope find_files<CR>",
     ["<leader>fg"] = "<cmd>Telescope live_grep<CR>",
     ["<leader>fb"] = "<cmd>Telescope buffers<CR>",
   },
