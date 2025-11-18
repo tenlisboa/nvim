@@ -1,0 +1,53 @@
+return {
+  "folke/which-key.nvim",
+  event = { "VeryLazy" },
+  opts = {
+    preset = "modern",
+    delay = vim.o.timeoutlen,
+    triggers = {
+      { "<auto>", mode = "nixso" },
+    },
+    plugins = {
+      marks = true,
+      registers = true,
+      spelling = {
+        enabled = true,
+        suggestions = 20,
+      },
+      presets = {
+        motions = false,
+        operators = false,
+        text_objects = true,
+        windows = true,
+        nav = true,
+        z = true,
+        g = true,
+      },
+    },
+    win = {
+      border = "none",
+      padding = { 1, 2 },
+      wo = { winblend = 0 },
+    },
+    expand = 1,
+    spec = {
+      { "<leader>a", group = "AI Tools", icon = "🧠" },
+      { "<leader>b", group = "Buffers", icon = "" },
+      { "<leader>c", group = "Code & Commands", icon = "" },
+      { "<leader>d", group = "Debug" },
+      { "<leader>f", group = "Files", icon = "" },
+      { "<leader>g", group = "Git" },
+      { "<leader>l", group = "LSP", icon = "󱜙" },
+      { "<leader>n", group = "Notifications", icon = "" },
+      { "<leader>o", group = "Options", icon = "" },
+      { "<leader>p", group = "Packages & Profiling", icon = "" },
+      { "<leader>q", group = "Quit & Save", icon = "" },
+      { "<leader>s", group = "Sessions", icon = "" },
+      { "<leader>t", group = "Tests", icon = "" },
+      { "<leader>u", group = "Surround", icon = "󰰑" },
+      { "<leader>w", group = "Windows & Smart Splits", icon = "荒" },
+      { "<leader>x", group = "Diagnostics", icon = "" },
+      { "<leader>y", group = "Yank", icon = "" },
+    },
+  },
+}
