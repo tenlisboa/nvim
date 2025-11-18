@@ -819,6 +819,12 @@ vim.defer_fn(function()
     { "<leader>hh", desc = "Help: Toggle enhanced view", icon = "󰋖" },
   })
 
+  -- Register Python venv selector
+  wk.add({
+    mode = "n",
+    { "<leader>cv", desc = "Select Python venv", icon = "" },
+  })
+
   -- Register Inlay hints toggle
   wk.add({
     mode = "n",

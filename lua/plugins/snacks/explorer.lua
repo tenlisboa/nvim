@@ -9,6 +9,7 @@ return {
         explorer = {
           auto_close = false,
           hidden = true,
+          follow_file = false,
         },
       },
     },
