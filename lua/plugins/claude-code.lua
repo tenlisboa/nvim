@@ -1,6 +1,6 @@
 -- Use the proper claude-code.nvim plugin from GitHub
 return {
-  "tenlisboa/claude-code.nvim",
+  "greggh/claude-code.nvim",
   lazy = false,
   dependencies = {
     "nvim-lua/plenary.nvim", -- For git operations
