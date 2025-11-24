@@ -68,22 +68,60 @@ return {
         lsp_doc_border = false, -- add a border to hover docs and signature help
       },
       routes = {
-        -- Reduce noice noise by filtering messages
+        -- Only show error messages, skip everything else
         {
           filter = {
             event = "msg_show",
             kind = "",
-            find = "written",
           },
           opts = { skip = true },
         },
         {
           filter = {
             event = "msg_show",
-            kind = "",
-            find = "lines yanked",
+            kind = "echo",
           },
           opts = { skip = true },
+        },
+        {
+          filter = {
+            event = "msg_show",
+            kind = "echomsg",
+          },
+          opts = { skip = true },
+        },
+        {
+          filter = {
+            event = "msg_showmode",
+          },
+          opts = { skip = true },
+        },
+        {
+          filter = {
+            event = "msg_showcmd",
+          },
+          opts = { skip = true },
+        },
+        {
+          filter = {
+            event = "msg_ruler",
+          },
+          opts = { skip = true },
+        },
+        -- Allow errors through
+        {
+          filter = {
+            event = "msg_show",
+            kind = "emsg",
+          },
+          opts = { skip = false },
+        },
+        {
+          filter = {
+            event = "msg_show",
+            kind = "echoerr",
+          },
+          opts = { skip = false },
         },
       },
     })
