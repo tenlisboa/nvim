@@ -26,13 +26,13 @@ return {
       win = {
         keys = {
           term_normal = {
-            "<esc><esc>",
+            "<Esc><Esc>",
             function()
               return "<C-\\><C-n>"
             end,
             mode = "t",
             expr = true,
-            desc = "Double escape to normal mode",
+            desc = "Escape+Escape to normal mode",
           },
           q = "hide",
           ["<esc>"] = "hide",

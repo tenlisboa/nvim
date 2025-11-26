@@ -175,6 +175,10 @@ local plug_map = {
 
   -- Plugin Lazygit
   ["n|<leader>gg"] = map_callback(function()
+      if vim.fn.executable("lazygit") == 0 then
+        vim.notify("lazygit is not installed. Install it with: sudo apt install lazygit", vim.log.levels.ERROR)
+        return
+      end
       local snacks = get_snacks()
       if require("utils.git").is_git_repo() then
         ---@diagnostic disable-next-line: missing-fields

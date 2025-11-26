@@ -16,6 +16,7 @@ M.headers = {
   eagle = "eagle.cat",
   neovim = "neovim.cat",
   hack = "hack.cat",
+  jarvis = "jarvis.cat",
 }
 
 local function get_header(header)
